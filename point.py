@@ -36,15 +36,26 @@ class Point:
 
     def __lt__(self, that: Point) -> bool:
         # use _is_valid_operand above to check if `that` is a Point and raise an error if it isn't a Point object
-        pass
+        if not self._is_valid_operand(that):
+            raise TypeError("Operand must be  Point object")
+        return (self.y, self.x) < (that.y, that.x)
 
     def __eq__(self, that: Point) -> bool:
         # use _is_valid_operand above to check if `that` is a Point and raise an error if it isn't a Point object
-        pass
+        if not self._is_valid_operand(that):
+            return False
+        return self.x == that.x and self.y == that.y
 
     def slope_to(self, that: Point) -> float:
         # calculate the slope from this to that Point
-        pass
+        if self == that:
+            return float('-inf')
+        if self.x == that.x:
+            return float('inf')
+        if self.y == that.y:
+            return 0.0
+        return (that.y - self.y) / (that.x - self.x)
+        # m = (y2 - y1) / (x2 - x1)
     
     @staticmethod
     def main():
