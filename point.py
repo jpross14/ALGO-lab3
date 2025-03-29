@@ -37,7 +37,7 @@ class Point:
     def __lt__(self, that: Point) -> bool:
         # use _is_valid_operand above to check if `that` is a Point and raise an error if it isn't a Point object
         if not self._is_valid_operand(that):
-            raise TypeError("Operand must be  Point object")
+            raise TypeError("Operand must be Point object")
         return (self.y, self.x) < (that.y, that.x)
 
     def __eq__(self, that: Point) -> bool:

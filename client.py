@@ -1,5 +1,6 @@
 import turtle
 
+from brute_collinear_points import BruteCollinearPoints
 from fast_collinear_points import FastCollinearPoints
 from point import Point
 from sys import argv
@@ -31,7 +32,7 @@ def main(filename):
         p.draw()
 
     # Print and draw the line segments
-    collinear = FastCollinearPoints(points)
+    collinear = BruteCollinearPoints(points)
     for segment in collinear.segments():
         print(f"{segment.p} -> {segment.q}")
         segment.draw()
