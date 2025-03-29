@@ -14,7 +14,7 @@ class BruteCollinearPoints:
         #make a sorted copy of points[] to prevent mutating og data
         local_points = sorted(points)
 
-        # checking dupicats pts
+        # checking dupicant pts
         for i in range(1, len(local_points)):
             if local_points[i] == local_points[i - 1]:
                 raise ValueError("Input contains duplicate")

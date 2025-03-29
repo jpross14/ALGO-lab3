@@ -32,11 +32,11 @@ def main(filename):
         p.draw()
 
     # Print and draw the line segments
-    collinear = BruteCollinearPoints(points)
+    collinear = FastCollinearPoints(points)
     for segment in collinear.segments():
         print(f"{segment.p} -> {segment.q}")
         segment.draw()
-
+        
     turtle.done()
 
 
